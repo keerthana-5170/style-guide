@@ -1,0 +1,35 @@
+.messages__success_msg-g{
+    color: #218A0F;
+}
+
+.messages__error_msg-r{
+    color: #DD2222;
+
+} 
+
+.messages__warning_msg-y{
+    color: #D7B817;
+
+}
+
+.text__input_error{
+    border:1px solid #F27649;
+    background-color: #FEF1EC;
+    
+}
+
+.text__input_success{
+    border:1px solid #30AB6C;
+    background-color: #F6FEFA;
+}
+.success-icon{
+    position: relative;
+    right: 25px;
+    color: #30AB6C;
+    
+}
+.error-icon{
+    position: relative;
+    right: 25px;
+    color: #F27649;
+}

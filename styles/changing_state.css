@@ -1,0 +1,79 @@
+.myform__button_primary:hover{
+    background: linear-gradient(180deg, #9FEFC6 0%, #48E092 100%);
+    box-shadow: 0px 13px 10px 2px rgba(72, 224, 146, 0.35), inset 0px -2px 0px rgba(74, 196, 134, 0.6);
+}
+.myform__button_primary:active{
+    background: linear-gradient(180deg, #30C578 0%, #3CB979 100%);
+    box-shadow: 0px 4px 4px -2px rgba(48, 171, 108, 0.45), inset 0px -2px 0px rgba(48, 171, 108, 0.2);
+
+}
+.myform__button_default:hover{
+    box-shadow: 0px 13px 10px 2px rgba(234, 239, 242, 0.55), inset 0px -2px 0px rgba(219, 225, 231, 0.6);
+    background: rgba(223, 229, 236, 0.45);
+}
+.myform__button_default:active{
+    background: #DFE5EC;
+    box-shadow: 0px 4px 4px -2px rgba(172, 186, 200, 0.25), inset 0px -2px 0px rgba(219, 225, 231, 0.6);
+}
+.myform__button_secondary:hover{
+    background: linear-gradient(180deg, #BEF4D8 0%, #99E6BE 100%);
+    box-shadow: 0px 13px 10px 2px rgba(72, 224, 146, 0.25), inset 0px -2px 0px rgba(48, 171, 108, 0.12);
+}
+.myform__button_secondary:active{
+    background: linear-gradient(180deg, #A8F0CB 0%, #70DCA4 100%);
+    box-shadow: 0px 4px 4px -2px rgba(48, 171, 108, 0.45), inset 0px -2px 0px rgba(48, 171, 108, 0.2);
+}
+.checkbox__check-container:hover input ~ .checkbox__checkmark {
+    box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.12), inset 0px 0px 4px rgba(172, 186, 200, 0.45);
+  }
+  .radio__radio-container:hover input ~ .radio__click{
+    box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.12), inset 0px 0px 4px rgba(172, 186, 200, 0.45);
+}
+.checkbox__check-container input:checked ~ .checkbox__checkmark {
+    background-color: #48E092;
+  }
+  .checkbox__check-container input:checked ~ .checkbox__checkmark:after {
+    display: block;
+  }
+
+  .checkbox__check-container_disabled input:checked ~ .checkbox__checkmark{
+    background-color: #7be7af;
+}
+.radio__radio-container input:checked ~ .radio__click{
+    background-color: #48E092;
+}
+.radio__radio-container input:checked ~ .radio__click:after {
+    display: block;
+  }
+  .radio__radio-container_disabled input:checked ~ .radio__click{
+    background-color: #7be7af;
+}
+.checkbox__checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+ 
+  .checkbox__check-container .checkbox__checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+  .radio__click:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+ 
+  .radio__radio-container .radio__click:after {
+    top: 9px;
+   left: 9px;
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background: white;
+}

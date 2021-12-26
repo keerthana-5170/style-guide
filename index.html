@@ -4,13 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/module.css">
+    <link rel="stylesheet" href="styles/state.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/changing_state.css">
+
+
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 <body>
+    
+    <header id="header" class="l-align-center l-full-width">
+        <h2>STYLE GUIDE</h2>
+    </header>
     <form action="#" class="myform">
-         <h3 class="myform__heading">Form</h3>
+         <h3 class="myform__heading l-align-center">Form</h3>
 
         <div class="text">
             <label for="firstName">Name</label><br>
@@ -27,46 +41,55 @@
         <br>
         
         <div class="checkbox">
-            <label class="checkbox__check-container">
+            <label class="checkbox__check-container is-shown">
                 <input type="checkbox" >
                 <span class="checkbox__checkmark"></span>Normal
             </label>
     
-            <label class="checkbox__check-container checkbox__check-container_disabled" > 
+            <label class="checkbox__check-container checkbox__check-container_disabled is-hidden" > 
                 <input type="checkbox" >
                 <span class="checkbox__checkmark"></span>Disabled
             </label>
         </div>
         <br>
         <div class="radio">
-            <label class="radio__radio-container">
+            <label class="radio__radio-container is-shown">
                 <input type="radio">
                 <span class="radio__click"></span>Checked
             </label> <br>
     
-            <label class="radio__radio-container" > 
+            <label class="radio__radio-container is-shown" > 
                 <input type="radio" >
                 <span class="radio__click"></span>Normal
             </label> <br>
     
-            <label class="radio__radio-container radio__radio-container_disabled" > 
+            <label class="radio__radio-container radio__radio-container_disabled is-hidden" > 
                 <input type="radio" >
                 <span class="radio__click"></span>Disabled
             </label> <br>
         </div>
-       
-       
-         <br>
+          <br>
+             <button class="myform__button myform__button_default ">Default</button>
+            <button class="myform__button myform__button_primary is-selected">Primary</button>
+             <button class="myform__button myform__button_secondary is-selected">Secondary</button>
+            <br>    
     </form>
     <div class="messages">
-        <p class="messages__info"><i class="fa fa-info-circle" aria-hidden="true"></i>
-            This is a simple information  <i class="fa fa-times error" aria-hidden="true"></i></p>
-        <p class="messages__success-message"><i class="fa fa-check-circle" aria-hidden="true"></i>
-            Your action was completed successfully <i class="fa fa-times error" aria-hidden="true"></i></p>
-        <p class="messages__error-message"><i class="fa fa-times-circle" aria-hidden="true"></i>
-            Your action couldn’t be completed<i class="fa fa-times error" aria-hidden="true"></i></p>
-        <p class="messages__warning-message"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-            Your action might have side effects<i class="fa fa-times error" aria-hidden="true"></i></p>
+
+        <p class="messages__info l-align-center l-msg-padding"><i class="fa fa-info-circle l-icon-rmargin" aria-hidden="true"></i>
+            This is a simple information  <i class="fa fa-times l-icon-lmargin" aria-hidden="true"></i></p>
+       
+       <p class="messages__success messages__success_msg-g l-align-center l-msg-padding"><i class="fa fa-check-circle l-icon-rmargin" aria-hidden="true"></i>
+            Your action was completed successfully <i class="fa fa-times l-icon-lmargin" aria-hidden="true"></i></p>
+       
+       <p class="messages__error messages__error_msg-r l-align-center l-msg-padding"><i class="fa fa-times-circle l-icon-rmargin" aria-hidden="true"></i>
+            Your action couldn’t be completed<i class="fa fa-times l-icon-lmargin" aria-hidden="true"></i></p>
+ 
+        <p class="messages__warning messages__warning_msg-y l-align-center l-msg-padding"><i class="fa fa-exclamation-triangle l-icon-rmargin" aria-hidden="true"></i>
+            Your action might have side effects<i class="fa fa-times l-icon-lmargin" aria-hidden="true"></i></p>
     </div>
+    <footer id="footer" class="l-align-center l-full-width">
+        <h2>FOOTER TEXT GOES HERE</h2>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,23 @@
+#header{
+    background-color: #9eff1f;
+    padding: 10px;
+}
+#footer{
+    background-color: #9eff1f;
+    padding: 10px;
+}
+.l-align-center{
+    text-align: center;
+}
+.l-full-width {
+    width: 100%;
+}
+.l-msg-padding{
+    padding: 25px 16px 10px 16px;
+}
+.l-icon-rmargin{
+   margin-right: 5%;
+}
+.l-icon-lmargin{
+    margin-left: 5%;
+ }
