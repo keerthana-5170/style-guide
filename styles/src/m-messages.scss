@@ -16,6 +16,12 @@
         border-radius: 6px;
       
         // modifiers
+        &--default{
+            color: #0F678A;
+            background: linear-gradient(180deg, #CFEFFC 0%, #BAE6F8 100%);
+            box-shadow: 0px 4px 8px -2px rgba(106, 190, 226, 0.5), 0px 8px 10px 2px rgba(186, 230, 248, 0.5), inset 0px -2px 0px -1px rgba(145, 210, 237, 0.75);
+        }
+        
         &--warning {
         color: #D7B817;
         background: linear-gradient(180deg, #FAF7D1 0%, #F5F1BC 100%);
@@ -36,6 +42,4 @@
     }
 }
   
-  // 1) learn scss
-  // 2) base.scss => only base html tags => h1-h6, p, strong, em, a, table
-  // 3) BEM modules => should start with 'm-'. example, m-messages.scss
+  

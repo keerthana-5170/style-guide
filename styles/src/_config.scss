@@ -1,0 +1,16 @@
+$heading-font-family : 'Trueno', sans-serif;
+
+$body-font-family : 'Sofia Pro', sans-serif;
+
+$heading-txt: "#181E23";
+
+$body-txt: #525E68;
+
+$general-padding: 20px;
+
+$general-margin: 3%;
+
+@mixin icon($pos,$right_dist) {
+    position: $pos;
+    right: $right_dist;
+}
