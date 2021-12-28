@@ -1,11 +1,19 @@
-.m-buttons {
+/*
+        default-button
+       <button class="m-btn m-btn--default">Default</button>
 
-    &__item{
-        border-radius: 8px;
-        padding:12px 27px 12px 27px;
-        cursor: pointer;
-
-        &--default{
+        primary-button
+       <button class="m-btn m-btn--primary is-selected">Primary</button>
+       
+        secondary-button
+       <button class="m-btn m-btn--secondary">Secondary</button>
+*/
+.m-btn {
+      border-radius: 10px;
+      cursor: pointer;
+      padding: 10px;
+      
+     &--default{
             background: #FFFFFF;
             box-shadow: 0px 4px 8px -2px rgba(172, 186, 200, 0.3), 0px 13px 10px 2px rgba(234, 239, 242, 0.2), inset 0px -2px 0px rgba(219, 225, 231, 0.6);  
         }
@@ -21,7 +29,7 @@
         }
 
 
-        &--primary{
+     &--primary{
             background: linear-gradient(180deg, #48E092 0%, #30C478 100%);
             box-shadow: 0px 4px 8px -2px rgba(48, 171, 108, 0.45), 0px 13px 10px 2px rgba(72, 224, 146, 0.35), inset 0px -2px 0px rgba(48, 171, 108, 0.6);
             color:#fff;
@@ -39,18 +47,20 @@
         }
 
 
-        &--secondary{
+     &--secondary{
             background: linear-gradient(180deg, #E9FBF2 0%, #C2F0D8 100%);
             box-shadow: 0px 4px 8px -2px rgba(48, 171, 108, 0.1), 0px 13px 10px 2px rgba(72, 224, 146, 0.2), inset 0px -2px 0px rgba(48, 171, 108, 0.12);
             color:#30AB6C;
         }
+        
         &--secondary:hover{
             background: linear-gradient(180deg, #BEF4D8 0%, #99E6BE 100%);
             box-shadow: 0px 13px 10px 2px rgba(72, 224, 146, 0.25), inset 0px -2px 0px rgba(48, 171, 108, 0.12);
         }
+
         &--secondary:active{
             background: linear-gradient(180deg, #A8F0CB 0%, #70DCA4 100%);
             box-shadow: 0px 4px 4px -2px rgba(48, 171, 108, 0.45), inset 0px -2px 0px rgba(48, 171, 108, 0.2);
         }
-    }
+    
 }

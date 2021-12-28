@@ -1,0 +1,48 @@
+
+/*
+          
+            <label for="firstName">Name</label><br>
+            <input type="text" class="m-text" name="firstName" placeholder="Placeholder Text"><br>
+    
+            input_text + suffix_success_icon
+            <label for="firstName">Name</label><br>
+            <input type="text" class="m-text m-text--success" name="firstName" placeholder="Placeholder Text" >
+            <i class="fa fa-check m-text__icon m-text__icon--success" aria-hidden="true"></i></input><br>
+            
+            input_text + suffix_error_icon
+            <label for="firstName">Name</label><br>
+            <input type="text" class="m-text m-text--error" name="firstName" placeholder="Placeholder Text" >
+            <i class="fa fa-times m-text__icon m-text__icon--error" aria-hidden="true"></i></input><br>
+  */
+  @import "config";
+.m-text{
+        color:#181E23;
+        line-height: 24px;
+        border: 2px solid #D1D8E0;
+        border-radius: 4px;
+        margin-bottom: 10px;
+
+        &--success{
+            border:1px solid #30AB6C;
+            background-color: #F6FEFA;
+        }
+
+        &--error{
+            border:1px solid #F27649;
+            background-color: #FEF1EC;
+        }
+        &__icon{
+
+            &--success{
+                @include icon(relative,25px);
+                color: #30AB6C;
+            }
+
+            &--error{
+                @include icon(relative,25px);
+                color: #F27649;
+            }
+        }
+    }
+
+

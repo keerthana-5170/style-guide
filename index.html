@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/css/main.css">
-   
+    <link rel="stylesheet" href="styles/changing_state.css">
+
+
 
 
   <!-- <link rel="stylesheet" href="styles/index.css">
@@ -30,20 +32,18 @@
     <form action="#" class="myform">
          <h3 class="myform__heading l-align-center">Form</h3>
 
-        <div class="m-text">
             <label for="firstName">Name</label><br>
-            <input type="text" class="m-text__input" name="firstName" placeholder="Placeholder Text"><br>
+            <input type="text" class="m-text" name="firstName" placeholder="Placeholder Text"><br>
     
             <label for="firstName">Name</label><br>
-            <input type="text" class="m-text__input m-text__input--success" name="firstName" placeholder="Placeholder Text" >
-            <i class="fa fa-check success-icon" aria-hidden="true"></i></input><br>
+            <input type="text" class="m-text m-text--success" name="firstName" placeholder="Placeholder Text" >
+            <i class="fa fa-check m-text__icon m-text__icon--success" aria-hidden="true"></i><br>
     
             <label for="firstName">Name</label><br>
-            <input type="text" class="m-text__input m-text__input--error" name="firstName" placeholder="Placeholder Text" >
-            <i class="fa fa-times error-icon" aria-hidden="true"></i></input><br>
-        </div>
-
-        <br>
+            <input type="text" class="m-text m-text--error" name="firstName" placeholder="Placeholder Text" >
+            <i class="fa fa-times m-text__icon m-text__icon--error" aria-hidden="true"></i><br>
+        
+         <br>
         
         <div class="checkbox">
             <label class="checkbox__check-container is-shown">
@@ -57,31 +57,22 @@
             </label>
         </div>
         <br>
-        <div class="radio">
-            <label class="radio__radio-container is-shown">
-                <input type="radio">
-                <span class="radio__click"></span>Checked
-            </label> <br>
+            <label class="m-radio is-shown">
+                <input type="radio" class="m-radio__input">
+                <span class="m-radio__clickBtn"></span>Checked
+            </label> <br>  <br>
     
-            <label class="radio__radio-container is-shown" > 
-                <input type="radio" >
-                <span class="radio__click"></span>Normal
+            <label class="m-radio m-radio--disabled is-hidden" > 
+                <input type="radio" class="m-radio__input" >
+                <span class="m-radio__clickBtn"></span>Disabled
             </label> <br>
-    
-            <label class="radio__radio-container radio__radio-container_disabled is-hidden" > 
-                <input type="radio" >
-                <span class="radio__click"></span>Disabled
-            </label> <br>
-        </div>
           <br>
-        <div class="buttons">
-            <button class="m-buttons__item m-buttons__item--default ">Default</button>
+            <button class="m-btn m-btn--default">Default</button>
 
-            <button class="m-buttons__item m-buttons__item--primary is-selected">Primary</button>
+            <button class="m-btn m-btn--primary is-selected">Primary</button>
 
-            <button class="m-buttons__item m-buttons__item--secondary">Secondary</button>
-        </div>
-             <br>    
+            <button class="m-btn m-btn--secondary">Secondary</button>
+         <br>    
     </form>
     <div class="messages">
 

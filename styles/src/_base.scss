@@ -1,4 +1,18 @@
 
+
+:root{
+    --heading-font-family : 'Trueno', sans-serif;
+
+    --body-font-family : 'Sofia Pro', sans-serif;
+    
+    --heading-txt: "#181E23";
+    
+    --body-txt: #525E68;
+    
+    --general-padding: 20px;
+    
+    --general-margin: 3%;
+}
 @font-face {
     font-family: Trueno;
     font-weight: bold;
@@ -15,16 +29,16 @@ body,html {
 }
 
 body {
-    font-family: $body-font-family ;
-    color: $body-txt;
+    font-family: var(--body-font-family);
+    color:  var(--body-txt);
     line-height: 150%;
     font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: $heading-font-family;
-    color: $heading-txt;
+    font-family: var(--heading-font-family);
+    color: var(--heading-txt);
     line-height: 120%;
 }
 
@@ -71,7 +85,7 @@ label {
 }
 
 form{
-    padding: $general-padding;
+    padding: var(--general-padding);
     border: 2px solid black;
-    margin: $general-margin;
+    margin: var(--general-margin);
 }

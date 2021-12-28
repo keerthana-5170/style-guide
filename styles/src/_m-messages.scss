@@ -1,3 +1,23 @@
+/*
+        msg + suffix_icon
+        <p class="m-messages__item m-messages__item--default l-align-center l-msg-padding"><i class="fa fa-info-circle l-icon-rmargin" aria-hidden="true"></i>
+            This is a simple information  
+        <i class="fa fa-times l-icon-lmargin" aria-hidden="true"></i></p>
+       
+        msg + suffix_icon
+       <p class="m-messages__item m-messages__item--success l-align-center l-msg-padding"><i class="fa fa-check-circle l-icon-rmargin" aria-hidden="true"></i>
+            Your action was completed successfully 
+        <i class="fa fa-times l-icon-lmargin" aria-hidden="true"></i></p>
+       
+        msg + suffix_icon
+       <p class="m-messages__item m-messages__item--error l-align-center l-msg-padding"><i class="fa fa-times-circle l-icon-rmargin" aria-hidden="true"></i>
+            Your action couldn’t be completed
+        <i class="fa fa-times l-icon-lmargin" aria-hidden="true"></i></p>
+
+        msg + suffix_icon
+        <p class="m-messages__item m-messages__item--warning l-align-center l-msg-padding">
+        <i class="fa fa-exclamation-triangle l-icon-rmargin" aria-hidden="true"></i> </p>
+*/
 // block
 .m-messages {
   

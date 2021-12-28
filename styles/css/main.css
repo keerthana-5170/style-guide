@@ -1,3 +1,13 @@
+@charset "UTF-8";
+:root {
+  --heading-font-family: 'Trueno', sans-serif;
+  --body-font-family: 'Sofia Pro', sans-serif;
+  --heading-txt: "#181E23";
+  --body-txt: #525E68;
+  --general-padding: 20px;
+  --general-margin: 3%;
+}
+
 @font-face {
   font-family: Trueno;
   font-weight: bold;
@@ -15,15 +25,15 @@ body, html {
 }
 
 body {
-  font-family: "Sofia Pro", sans-serif;
-  color: #525E68;
+  font-family: var(--body-font-family);
+  color: var(--body-txt);
   line-height: 150%;
   font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Trueno", sans-serif;
+  font-family: var(--heading-font-family);
   color: var(--heading-txt);
   line-height: 120%;
 }
@@ -72,36 +82,46 @@ label {
 }
 
 form {
-  padding: 20px;
+  padding: var(--general-padding);
   border: 2px solid black;
-  margin: 3%;
+  margin: var(--general-margin);
 }
 
-.m-buttons__item {
-  border-radius: 8px;
-  padding: 12px 27px 12px 27px;
+/*
+        default-button
+       <button class="m-btn m-btn--default">Default</button>
+
+        primary-button
+       <button class="m-btn m-btn--primary is-selected">Primary</button>
+       
+        secondary-button
+       <button class="m-btn m-btn--secondary">Secondary</button>
+*/
+.m-btn {
+  border-radius: 10px;
   cursor: pointer;
+  padding: 10px;
 }
 
-.m-buttons__item--default {
+.m-btn--default {
   background: #FFFFFF;
   -webkit-box-shadow: 0px 4px 8px -2px rgba(172, 186, 200, 0.3), 0px 13px 10px 2px rgba(234, 239, 242, 0.2), inset 0px -2px 0px rgba(219, 225, 231, 0.6);
           box-shadow: 0px 4px 8px -2px rgba(172, 186, 200, 0.3), 0px 13px 10px 2px rgba(234, 239, 242, 0.2), inset 0px -2px 0px rgba(219, 225, 231, 0.6);
 }
 
-.m-buttons__item--default:hover {
+.m-btn--default:hover {
   -webkit-box-shadow: 0px 13px 10px 2px rgba(234, 239, 242, 0.55), inset 0px -2px 0px rgba(219, 225, 231, 0.6);
           box-shadow: 0px 13px 10px 2px rgba(234, 239, 242, 0.55), inset 0px -2px 0px rgba(219, 225, 231, 0.6);
   background: rgba(223, 229, 236, 0.45);
 }
 
-.m-buttons__item--default:active {
+.m-btn--default:active {
   background: #DFE5EC;
   -webkit-box-shadow: 0px 4px 4px -2px rgba(172, 186, 200, 0.25), inset 0px -2px 0px rgba(219, 225, 231, 0.6);
           box-shadow: 0px 4px 4px -2px rgba(172, 186, 200, 0.25), inset 0px -2px 0px rgba(219, 225, 231, 0.6);
 }
 
-.m-buttons__item--primary {
+.m-btn--primary {
   background: -webkit-gradient(linear, left top, left bottom, from(#48E092), to(#30C478));
   background: linear-gradient(180deg, #48E092 0%, #30C478 100%);
   -webkit-box-shadow: 0px 4px 8px -2px rgba(48, 171, 108, 0.45), 0px 13px 10px 2px rgba(72, 224, 146, 0.35), inset 0px -2px 0px rgba(48, 171, 108, 0.6);
@@ -109,21 +129,21 @@ form {
   color: #fff;
 }
 
-.m-buttons__item--primary:hover {
+.m-btn--primary:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#9FEFC6), to(#48E092));
   background: linear-gradient(180deg, #9FEFC6 0%, #48E092 100%);
   -webkit-box-shadow: 0px 13px 10px 2px rgba(72, 224, 146, 0.35), inset 0px -2px 0px rgba(74, 196, 134, 0.6);
           box-shadow: 0px 13px 10px 2px rgba(72, 224, 146, 0.35), inset 0px -2px 0px rgba(74, 196, 134, 0.6);
 }
 
-.m-buttons__item--primary:active {
+.m-btn--primary:active {
   background: -webkit-gradient(linear, left top, left bottom, from(#30C578), to(#3CB979));
   background: linear-gradient(180deg, #30C578 0%, #3CB979 100%);
   -webkit-box-shadow: 0px 4px 4px -2px rgba(48, 171, 108, 0.45), inset 0px -2px 0px rgba(48, 171, 108, 0.2);
           box-shadow: 0px 4px 4px -2px rgba(48, 171, 108, 0.45), inset 0px -2px 0px rgba(48, 171, 108, 0.2);
 }
 
-.m-buttons__item--secondary {
+.m-btn--secondary {
   background: -webkit-gradient(linear, left top, left bottom, from(#E9FBF2), to(#C2F0D8));
   background: linear-gradient(180deg, #E9FBF2 0%, #C2F0D8 100%);
   -webkit-box-shadow: 0px 4px 8px -2px rgba(48, 171, 108, 0.1), 0px 13px 10px 2px rgba(72, 224, 146, 0.2), inset 0px -2px 0px rgba(48, 171, 108, 0.12);
@@ -131,20 +151,40 @@ form {
   color: #30AB6C;
 }
 
-.m-buttons__item--secondary:hover {
+.m-btn--secondary:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#BEF4D8), to(#99E6BE));
   background: linear-gradient(180deg, #BEF4D8 0%, #99E6BE 100%);
   -webkit-box-shadow: 0px 13px 10px 2px rgba(72, 224, 146, 0.25), inset 0px -2px 0px rgba(48, 171, 108, 0.12);
           box-shadow: 0px 13px 10px 2px rgba(72, 224, 146, 0.25), inset 0px -2px 0px rgba(48, 171, 108, 0.12);
 }
 
-.m-buttons__item--secondary:active {
+.m-btn--secondary:active {
   background: -webkit-gradient(linear, left top, left bottom, from(#A8F0CB), to(#70DCA4));
   background: linear-gradient(180deg, #A8F0CB 0%, #70DCA4 100%);
   -webkit-box-shadow: 0px 4px 4px -2px rgba(48, 171, 108, 0.45), inset 0px -2px 0px rgba(48, 171, 108, 0.2);
           box-shadow: 0px 4px 4px -2px rgba(48, 171, 108, 0.45), inset 0px -2px 0px rgba(48, 171, 108, 0.2);
 }
 
+/*
+        msg + suffix_icon
+        <p class="m-messages__item m-messages__item--default l-align-center l-msg-padding"><i class="fa fa-info-circle l-icon-rmargin" aria-hidden="true"></i>
+            This is a simple information  
+        <i class="fa fa-times l-icon-lmargin" aria-hidden="true"></i></p>
+       
+        msg + suffix_icon
+       <p class="m-messages__item m-messages__item--success l-align-center l-msg-padding"><i class="fa fa-check-circle l-icon-rmargin" aria-hidden="true"></i>
+            Your action was completed successfully 
+        <i class="fa fa-times l-icon-lmargin" aria-hidden="true"></i></p>
+       
+        msg + suffix_icon
+       <p class="m-messages__item m-messages__item--error l-align-center l-msg-padding"><i class="fa fa-times-circle l-icon-rmargin" aria-hidden="true"></i>
+            Your action couldn’t be completed
+        <i class="fa fa-times l-icon-lmargin" aria-hidden="true"></i></p>
+
+        msg + suffix_icon
+        <p class="m-messages__item m-messages__item--warning l-align-center l-msg-padding">
+        <i class="fa fa-exclamation-triangle l-icon-rmargin" aria-hidden="true"></i> </p>
+*/
 .m-messages__item {
   /*
         inline-start: left
@@ -191,7 +231,22 @@ form {
           box-shadow: 0px 4px 8px -2px rgba(230, 152, 152, 0.5), 0px 8px 10px 2px rgba(244, 190, 190, 0.5), inset 0px -2px 0px -1px rgba(230, 152, 152, 0.75);
 }
 
-.m-text__input {
+/*
+          
+            <label for="firstName">Name</label><br>
+            <input type="text" class="m-text" name="firstName" placeholder="Placeholder Text"><br>
+    
+            input_text + suffix_success_icon
+            <label for="firstName">Name</label><br>
+            <input type="text" class="m-text m-text--success" name="firstName" placeholder="Placeholder Text" >
+            <i class="fa fa-check m-text__icon m-text__icon--success" aria-hidden="true"></i></input><br>
+            
+            input_text + suffix_error_icon
+            <label for="firstName">Name</label><br>
+            <input type="text" class="m-text m-text--error" name="firstName" placeholder="Placeholder Text" >
+            <i class="fa fa-times m-text__icon m-text__icon--error" aria-hidden="true"></i></input><br>
+  */
+.m-text {
   color: #181E23;
   line-height: 24px;
   border: 2px solid #D1D8E0;
@@ -199,24 +254,92 @@ form {
   margin-bottom: 10px;
 }
 
-.m-text__input--success {
+.m-text--success {
   border: 1px solid #30AB6C;
   background-color: #F6FEFA;
 }
 
-.m-text__input--error {
+.m-text--error {
   border: 1px solid #F27649;
   background-color: #FEF1EC;
 }
 
-.success-icon {
+.m-text__icon--success {
   position: relative;
   right: 25px;
   color: #30AB6C;
 }
 
-.error-icon {
+.m-text__icon--error {
   position: relative;
   right: 25px;
   color: #F27649;
+}
+
+/*
+            <label class="m-radio is-shown">
+                <input type="radio" class="m-radio__input">
+                <span class="m-radio__clickBtn"></span>Checked
+            </label> <br>  <br>
+    
+            <label class="m-radio m-radio--disabled is-hidden" > 
+                <input type="radio" class="m-radio__input" >
+                <span class="m-radio__clickBtn"></span>Disabled
+            </label>
+*/
+.m-radio {
+  position: relative;
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+.m-radio:hover .m-radio__input ~ .m-radio__clickBtn {
+  -webkit-box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.12), inset 0px 0px 4px rgba(172, 186, 200, 0.45);
+          box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.12), inset 0px 0px 4px rgba(172, 186, 200, 0.45);
+}
+
+.m-radio .m-radio__input:checked ~ .m-radio__clickBtn {
+  background-color: #48E092;
+}
+
+.m-radio .m-radio__input:checked ~ .m-radio__clickBtn::after {
+  display: block;
+}
+
+.m-radio--disabled .m-radio__input:checked ~ .m-radio__clickBtn {
+  background-color: #7be7af;
+}
+
+.m-radio--disabled {
+  color: #979FA6;
+}
+
+.m-radio__input {
+  opacity: 0;
+}
+
+.m-radio .m-radio__clickBtn::after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.m-radio__clickBtn {
+  background-color: #F0F3F7;
+  position: absolute;
+  left: 5px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50px;
+  -webkit-box-shadow: inset 0px 1.5px 2px 1.5px rgba(0, 0, 0, 0.12), inset 0px 4px 8px -2px rgba(172, 186, 200, 0.45), inset 0px 13px 10px 2px rgba(234, 239, 242, 0.2);
+          box-shadow: inset 0px 1.5px 2px 1.5px rgba(0, 0, 0, 0.12), inset 0px 4px 8px -2px rgba(172, 186, 200, 0.45), inset 0px 13px 10px 2px rgba(234, 239, 242, 0.2);
+}
+
+.m-radio__clickBtn::after {
+  content: "";
+  position: absolute;
+  display: none;
 }
