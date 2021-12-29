@@ -1,13 +1,4 @@
 @charset "UTF-8";
-:root {
-  --heading-font-family: 'Trueno', sans-serif;
-  --body-font-family: 'Sofia Pro', sans-serif;
-  --heading-txt: "#181E23";
-  --body-txt: #525E68;
-  --general-padding: 20px;
-  --general-margin: 3%;
-}
-
 @font-face {
   font-family: Trueno;
   font-weight: bold;
@@ -232,7 +223,6 @@ form {
 }
 
 /*
-          
             <label for="firstName">Name</label><br>
             <input type="text" class="m-text" name="firstName" placeholder="Placeholder Text"><br>
     
@@ -246,6 +236,16 @@ form {
             <input type="text" class="m-text m-text--error" name="firstName" placeholder="Placeholder Text" >
             <i class="fa fa-times m-text__icon m-text__icon--error" aria-hidden="true"></i></input><br>
   */
+:root {
+  --heading-font-family: 'Trueno', sans-serif;
+  --body-font-family: 'Sofia Pro', sans-serif;
+  --heading-txt: "#181E23";
+  --body-txt: #525E68;
+  --general-padding: 20px;
+  --general-margin: 3%;
+  --radio-border:50%;
+}
+
 .m-text {
   color: #181E23;
   line-height: 24px;
@@ -277,11 +277,13 @@ form {
 }
 
 /*
+            Normal radioBtn 
             <label class="m-radio is-shown">
                 <input type="radio" class="m-radio__input">
                 <span class="m-radio__clickBtn"></span>Checked
             </label> <br>  <br>
     
+            Disabled RadioBtn
             <label class="m-radio m-radio--disabled is-hidden" > 
                 <input type="radio" class="m-radio__input" >
                 <span class="m-radio__clickBtn"></span>Disabled
@@ -323,7 +325,7 @@ form {
   left: 9px;
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: var(--radio-border);
   background: white;
 }
 
@@ -333,7 +335,7 @@ form {
   left: 5px;
   width: 24px;
   height: 24px;
-  border-radius: 50px;
+  border-radius: var(--radio-border);
   -webkit-box-shadow: inset 0px 1.5px 2px 1.5px rgba(0, 0, 0, 0.12), inset 0px 4px 8px -2px rgba(172, 186, 200, 0.45), inset 0px 13px 10px 2px rgba(234, 239, 242, 0.2);
           box-shadow: inset 0px 1.5px 2px 1.5px rgba(0, 0, 0, 0.12), inset 0px 4px 8px -2px rgba(172, 186, 200, 0.45), inset 0px 13px 10px 2px rgba(234, 239, 242, 0.2);
 }
@@ -342,4 +344,14 @@ form {
   content: "";
   position: absolute;
   display: none;
+}
+
+:root {
+  --heading-font-family: 'Trueno', sans-serif;
+  --body-font-family: 'Sofia Pro', sans-serif;
+  --heading-txt: "#181E23";
+  --body-txt: #525E68;
+  --general-padding: 20px;
+  --general-margin: 3%;
+  --radio-border:50%;
 }

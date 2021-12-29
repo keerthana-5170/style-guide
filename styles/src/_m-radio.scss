@@ -1,9 +1,11 @@
 /*
+            Normal radioBtn 
             <label class="m-radio is-shown">
                 <input type="radio" class="m-radio__input">
                 <span class="m-radio__clickBtn"></span>Checked
             </label> <br>  <br>
     
+            Disabled RadioBtn
             <label class="m-radio m-radio--disabled is-hidden" > 
                 <input type="radio" class="m-radio__input" >
                 <span class="m-radio__clickBtn"></span>Disabled
@@ -25,6 +27,7 @@
     & .m-radio__input:checked ~ .m-radio__clickBtn::after {
         display: block;
     }
+
     &--disabled .m-radio__input:checked ~ .m-radio__clickBtn{
         background-color: #7be7af;
     }
@@ -32,6 +35,7 @@
         color: #979FA6;
 
     }
+
     &__input{
         opacity: 0;
     }
@@ -41,17 +45,17 @@
        left: 9px;
        width: 8px;
        height: 8px;
-       border-radius: 50%;
+       border-radius: var(--radio-border);
        background: white;
     } 
 
-    &__clickBtn{
+      &__clickBtn{
         background-color: #F0F3F7;
         position: absolute;
         left: 5px;
         width: 24px;
         height: 24px;
-        border-radius: 50px;
+        border-radius: var(--radio-border);
         box-shadow: inset 0px 1.5px 2px 1.5px rgba(0, 0, 0, 0.12), inset 0px 4px 8px -2px rgba(172, 186, 200, 0.45), inset 0px 13px 10px 2px rgba(234, 239, 242, 0.2);
     
         &::after {
