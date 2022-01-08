@@ -63,7 +63,6 @@ h6, .h6 {
 }
 
 p {
-  font-family: paraFont;
   margin-bottom: 16px;
 }
 
@@ -78,6 +77,10 @@ form {
   margin: var(--general-margin);
 }
 
+input {
+  font-size: 1rem;
+}
+
 /*
         default-button
        <button class="m-btn m-btn--default">Default</button>
@@ -89,9 +92,21 @@ form {
        <button class="m-btn m-btn--secondary">Secondary</button>
 */
 .m-btn {
-  border-radius: 10px;
+  -webkit-margin-end: 1rem;
+          margin-inline-end: 1rem;
+  -webkit-margin-after: 1.25rem;
+          margin-block-end: 1.25rem;
+  border: 0.0625rem solid var(--btn-default-border-color);
+  padding: 0.6875rem 1.6875rem;
+  color: var(--btn-default-txt);
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  line-height: 1.25rem;
+  background-color: var(--btn-default-bg);
+  border-radius: 0.5rem;
+  -webkit-box-shadow: var(--btn-default-box-shadow);
+          box-shadow: var(--btn-default-box-shadow);
   cursor: pointer;
-  padding: 10px;
 }
 
 .m-btn--default {
@@ -112,7 +127,17 @@ form {
           box-shadow: 0px 4px 4px -2px rgba(172, 186, 200, 0.25), inset 0px -2px 0px rgba(219, 225, 231, 0.6);
 }
 
-.m-btn--primary {
+.m-btn--default:disabled {
+  color: var(--btn-default-disabled-txt);
+  background-color: var(--btn-default-disabled-bg);
+  -webkit-box-shadow: var(--btn-default-disabled-box-shadow);
+          box-shadow: var(--btn-default-disabled-box-shadow);
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.m-btn--primary:enabled {
   background: -webkit-gradient(linear, left top, left bottom, from(#48E092), to(#30C478));
   background: linear-gradient(180deg, #48E092 0%, #30C478 100%);
   -webkit-box-shadow: 0px 4px 8px -2px rgba(48, 171, 108, 0.45), 0px 13px 10px 2px rgba(72, 224, 146, 0.35), inset 0px -2px 0px rgba(48, 171, 108, 0.6);
@@ -132,6 +157,16 @@ form {
   background: linear-gradient(180deg, #30C578 0%, #3CB979 100%);
   -webkit-box-shadow: 0px 4px 4px -2px rgba(48, 171, 108, 0.45), inset 0px -2px 0px rgba(48, 171, 108, 0.2);
           box-shadow: 0px 4px 4px -2px rgba(48, 171, 108, 0.45), inset 0px -2px 0px rgba(48, 171, 108, 0.2);
+}
+
+.m-btn--primary:disabled {
+  color: var(--btn-primary-disabled-txt);
+  background-color: var(--btn-primary-disabled-bg);
+  -webkit-box-shadow: var(--btn-primary-disabled-box-shadow);
+          box-shadow: var(--btn-primary-disabled-box-shadow);
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 
 .m-btn--secondary {
@@ -156,6 +191,16 @@ form {
           box-shadow: 0px 4px 4px -2px rgba(48, 171, 108, 0.45), inset 0px -2px 0px rgba(48, 171, 108, 0.2);
 }
 
+.m-btn--secondary:disabled {
+  color: var(--btn-secondary-disabled-txt);
+  background-color: var(--btn-secondary-disabled-bg);
+  -webkit-box-shadow: var(--btn-secondary-disabled-box-shadow);
+          box-shadow: var(--btn-secondary-disabled-box-shadow);
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 /*
         msg + suffix_icon
         <p class="m-messages__item m-messages__item--default l-align-center l-msg-padding"><i class="fa fa-info-circle l-icon-rmargin" aria-hidden="true"></i>
@@ -176,6 +221,40 @@ form {
         <p class="m-messages__item m-messages__item--warning l-align-center l-msg-padding">
         <i class="fa fa-exclamation-triangle l-icon-rmargin" aria-hidden="true"></i> </p>
 */
+.m-messages {
+  margin-left: 20px;
+}
+
+.m-messages__close {
+  cursor: pointer;
+}
+
+.m-messages__close::before {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("/icons/indication-icons.svg");
+  background-repeat: no-repeat;
+  background-size: 3rem 6rem;
+  background-position-x: -1.5rem;
+}
+
+.m-messages__item--success .m-messages__close::before {
+  background-position-y: -1.5rem;
+  background-position-x: -1.5rem;
+}
+
+.m-messages__item--warning .m-messages__close::before {
+  background-position-y: -3rem;
+  background-position-x: -1.5rem;
+}
+
+.m-messages__item--error .m-messages__close::before {
+  background-position-y: -4.5rem;
+  background-position-x: -1.5rem;
+}
+
 .m-messages__item {
   /*
         inline-start: left
@@ -183,19 +262,41 @@ form {
         block-start: top
         block-end: bottom
         */
-  -webkit-margin-after: 20px;
-          margin-block-end: 20px;
-  padding: 10px 16px;
-  background-color: lightgray;
-  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  -webkit-margin-after: 1.25rem;
+          margin-block-end: 1.25rem;
+  padding: 0.625rem 1rem;
+  border-radius: 0.375rem;
+}
+
+.m-messages__item::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  -webkit-margin-end: 1rem;
+          margin-inline-end: 1rem;
+  background-image: url("/icons/indication-icons.svg");
+  background-repeat: no-repeat;
+  background-size: 3rem 6rem;
 }
 
 .m-messages__item--default {
   color: #0F678A;
   background: -webkit-gradient(linear, left top, left bottom, from(#CFEFFC), to(#BAE6F8));
   background: linear-gradient(180deg, #CFEFFC 0%, #BAE6F8 100%);
-  -webkit-box-shadow: 0px 4px 8px -2px rgba(106, 190, 226, 0.5), 0px 8px 10px 2px rgba(186, 230, 248, 0.5), inset 0px -2px 0px -1px rgba(145, 210, 237, 0.75);
-          box-shadow: 0px 4px 8px -2px rgba(106, 190, 226, 0.5), 0px 8px 10px 2px rgba(186, 230, 248, 0.5), inset 0px -2px 0px -1px rgba(145, 210, 237, 0.75);
+  color: var(--msg-simple-info-txt);
+  -webkit-box-shadow: var(--msg-simple-box-shadow);
+          box-shadow: var(--msg-simple-box-shadow);
 }
 
 .m-messages__item--warning {
@@ -206,6 +307,10 @@ form {
           box-shadow: 0px 4px 8px -2px rgba(214, 207, 118, 0.35), 0px 8px 10px rgba(245, 241, 189, 0.35), inset 0px -2px 0px -1px rgba(214, 207, 118, 0.75);
 }
 
+.m-messages__item--warning::before {
+  background-position-y: -3rem;
+}
+
 .m-messages__item--success {
   color: #218A0F;
   background: -webkit-gradient(linear, left top, left bottom, from(#D6FBD0), to(#C2F7BA));
@@ -214,12 +319,20 @@ form {
           box-shadow: 0px 4px 8px -2px rgba(143, 227, 130, 0.5), 0px 8px 10px 2px rgba(195, 247, 187, 0.5), inset 0px -2px 0px -1px rgba(143, 227, 130, 0.85);
 }
 
+.m-messages__item--success::before {
+  background-position-y: -1.5rem;
+}
+
 .m-messages__item--error {
   color: #DD2222;
   background: -webkit-gradient(linear, left top, left bottom, from(#F9D2D2), to(#F4BDBD));
   background: linear-gradient(180deg, #F9D2D2 0%, #F4BDBD 100%);
   -webkit-box-shadow: 0px 4px 8px -2px rgba(230, 152, 152, 0.5), 0px 8px 10px 2px rgba(244, 190, 190, 0.5), inset 0px -2px 0px -1px rgba(230, 152, 152, 0.75);
           box-shadow: 0px 4px 8px -2px rgba(230, 152, 152, 0.5), 0px 8px 10px 2px rgba(244, 190, 190, 0.5), inset 0px -2px 0px -1px rgba(230, 152, 152, 0.75);
+}
+
+.m-messages__item--error::before {
+  background-position-y: -4.5rem;
 }
 
 /*
@@ -244,71 +357,121 @@ form {
   --general-padding: 20px;
   --general-margin: 3%;
   --radio-border:50%;
+  --msg-simple-box-shadow: 0px 4px 8px -2px rgba(106, 190, 226, 0.5), 0px 8px 10px 2px rgba(186, 230, 248, 0.5), inset 0px -2px 0px -1px rgba(145, 210, 237, 0.75);
+  --btn-default-border-color: #d1d8e0;
+  --btn-default-txt: #525e68;
+  --btn-default-box-shadow: 0rem 0.25rem 0.5rem -0.125rem rgba(172, 186, 200, 0.3), 0rem 0.8125rem 0.625rem 0.125rem rgba(234, 239, 242, 0.2), inset 0rem -0.125rem 0rem rgba(219, 225, 231, 0.6);
+  --textbox-focus-border: #30ab6c;
+  --valid-textbox-focus-box-shadow: #a8f0cb;
+  --invalid-textbox-focus-box-shadow: #ecae98;
+  --btn-default-disabled-txt: #525e68;
+  --btn-default-disabled-txt: #525e68;
+  --btn-default-disabled-box-shadow: inset 0rem -0.125rem 0rem rgba(219, 225, 231, 0.6);
+  --btn-primary-disabled-txt: #ffffff;
+  --btn-primary-disabled-bg: #48e092;
+  --btn-primary-disabled-box-shadow: inset 0rem -0.125rem 0rem rgba(48, 171, 108, 0.6);
+  --btn-secondary-disabled-bg: #e9fbf2;
+  --btn-secondary-disabled-txt: #30ab6c;
+  --btn-secondary-disabled-box-shadow: inset 0rem -0.125rem 0rem rgba(48, 171, 108, 0.12);
+  --radio-disabled-bg: #f0f3f7;
+  --radio-disabled-box-shadow: inset 0rem 0.0938rem 0.125rem 0.0938rem rgba(0, 0, 0, 0.12), inset 0rem 0.25rem 0.5rem -0.125rem rgba(172, 186, 200, 0.45), inset 0rem 0.8125rem 0.625rem 0.125rem rgba(234, 239, 242, 0.2);
 }
 
-.m-text {
-  color: #181E23;
+.m-text__input {
   line-height: 24px;
   border: 2px solid #D1D8E0;
   border-radius: 4px;
+  width: 90%;
   margin-bottom: 10px;
+  padding: 0.5625rem 0.625rem;
+  color: #181E23;
+  line-height: 150%;
+  border-radius: 0.25rem;
 }
 
-.m-text--success {
-  border: 1px solid #30AB6C;
+.m-text__input:focus {
+  border: 0.0625rem solid var(--textbox-focus-border);
+  -webkit-box-shadow: 0 0 0 0.125rem var(--valid-textbox-focus-box-shadow);
+          box-shadow: 0 0 0 0.125rem var(--valid-textbox-focus-box-shadow);
+  outline: none;
+}
+
+.m-text__input:after {
+  content: url("/icons/valid-tickmark.svg");
+  display: inline;
+}
+
+.m-text:disabled {
+  background-color: gray;
+}
+
+.m-text--success .m-text__input {
   background-color: #F6FEFA;
 }
 
-.m-text--error {
+.m-text--success .m-text__input::after {
+  content: url("/icons/valid-tickmark.svg");
+}
+
+.m-text--error .m-text__input {
   border: 1px solid #F27649;
   background-color: #FEF1EC;
 }
 
-.m-text__icon--success {
-  position: relative;
-  right: 25px;
-  color: #30AB6C;
+.m-text--error .m-text__input:focus {
+  border: 0.0625rem solid #eb551e;
+  -webkit-box-shadow: 0 0 0 0.125rem var(--invalid-textbox-focus-box-shadow);
+          box-shadow: 0 0 0 0.125rem var(--invalid-textbox-focus-box-shadow);
+  outline: none;
 }
 
-.m-text__icon--error {
-  position: relative;
-  right: 25px;
-  color: #F27649;
+.m-text--error .m-text__input::before {
+  content: 'success-icon';
+  display: block;
+  background-image: url("/icons/valid-tickmark.svg");
 }
 
 /*
             Normal radioBtn 
             <label class="m-radio is-shown">
                 <input type="radio" class="m-radio__input">
-                <span class="m-radio__clickBtn"></span>Checked
+                <span class="m-radio__clickbtn"></span>Checked
             </label> <br>  <br>
     
             Disabled RadioBtn
             <label class="m-radio m-radio--disabled is-hidden" > 
                 <input type="radio" class="m-radio__input" >
-                <span class="m-radio__clickBtn"></span>Disabled
+                <span class="m-radio__clickbtn"></span>Disabled
             </label>
 */
 .m-radio {
   position: relative;
   padding-left: 15px;
   cursor: pointer;
+  /*&--disabled{
+        .m-radio__clickbtn{
+            background-color: var(--radio-disabled-bg);
+            box-shadow: var(--radio-disabled-box-shadow);
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }*/
 }
 
-.m-radio:hover .m-radio__input ~ .m-radio__clickBtn {
+.m-radio:hover .m-radio__input ~ .m-radio__clickbtn {
   -webkit-box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.12), inset 0px 0px 4px rgba(172, 186, 200, 0.45);
           box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.12), inset 0px 0px 4px rgba(172, 186, 200, 0.45);
 }
 
-.m-radio .m-radio__input:checked ~ .m-radio__clickBtn {
+.m-radio .m-radio__input:checked ~ .m-radio__clickbtn {
   background-color: #48E092;
 }
 
-.m-radio .m-radio__input:checked ~ .m-radio__clickBtn::after {
+.m-radio .m-radio__input:checked ~ .m-radio__clickbtn::after {
   display: block;
 }
 
-.m-radio--disabled .m-radio__input:checked ~ .m-radio__clickBtn {
+.m-radio--disabled .m-radio__input:checked ~ .m-radio__clickbtn {
   background-color: #7be7af;
 }
 
@@ -320,16 +483,27 @@ form {
   opacity: 0;
 }
 
-.m-radio .m-radio__clickBtn::after {
+.m-radio__input:disabled ~ .m-radio__clickbtn {
+  background-color: var(--radio-disabled-bg);
+  -webkit-box-shadow: var(--radio-disabled-box-shadow);
+          box-shadow: var(--radio-disabled-box-shadow);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.m-radio .m-radio__clickbtn::after {
   top: 9px;
   left: 9px;
   width: 8px;
   height: 8px;
   border-radius: var(--radio-border);
   background: white;
+  content: "";
+  position: absolute;
+  display: none;
 }
 
-.m-radio__clickBtn {
+.m-radio__clickbtn {
   background-color: #F0F3F7;
   position: absolute;
   left: 5px;
@@ -340,12 +514,6 @@ form {
           box-shadow: inset 0px 1.5px 2px 1.5px rgba(0, 0, 0, 0.12), inset 0px 4px 8px -2px rgba(172, 186, 200, 0.45), inset 0px 13px 10px 2px rgba(234, 239, 242, 0.2);
 }
 
-.m-radio__clickBtn::after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
 :root {
   --heading-font-family: 'Trueno', sans-serif;
   --body-font-family: 'Sofia Pro', sans-serif;
@@ -354,4 +522,22 @@ form {
   --general-padding: 20px;
   --general-margin: 3%;
   --radio-border:50%;
+  --msg-simple-box-shadow: 0px 4px 8px -2px rgba(106, 190, 226, 0.5), 0px 8px 10px 2px rgba(186, 230, 248, 0.5), inset 0px -2px 0px -1px rgba(145, 210, 237, 0.75);
+  --btn-default-border-color: #d1d8e0;
+  --btn-default-txt: #525e68;
+  --btn-default-box-shadow: 0rem 0.25rem 0.5rem -0.125rem rgba(172, 186, 200, 0.3), 0rem 0.8125rem 0.625rem 0.125rem rgba(234, 239, 242, 0.2), inset 0rem -0.125rem 0rem rgba(219, 225, 231, 0.6);
+  --textbox-focus-border: #30ab6c;
+  --valid-textbox-focus-box-shadow: #a8f0cb;
+  --invalid-textbox-focus-box-shadow: #ecae98;
+  --btn-default-disabled-txt: #525e68;
+  --btn-default-disabled-txt: #525e68;
+  --btn-default-disabled-box-shadow: inset 0rem -0.125rem 0rem rgba(219, 225, 231, 0.6);
+  --btn-primary-disabled-txt: #ffffff;
+  --btn-primary-disabled-bg: #48e092;
+  --btn-primary-disabled-box-shadow: inset 0rem -0.125rem 0rem rgba(48, 171, 108, 0.6);
+  --btn-secondary-disabled-bg: #e9fbf2;
+  --btn-secondary-disabled-txt: #30ab6c;
+  --btn-secondary-disabled-box-shadow: inset 0rem -0.125rem 0rem rgba(48, 171, 108, 0.12);
+  --radio-disabled-bg: #f0f3f7;
+  --radio-disabled-box-shadow: inset 0rem 0.0938rem 0.125rem 0.0938rem rgba(0, 0, 0, 0.12), inset 0rem 0.25rem 0.5rem -0.125rem rgba(172, 186, 200, 0.45), inset 0rem 0.8125rem 0.625rem 0.125rem rgba(234, 239, 242, 0.2);
 }

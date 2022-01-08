@@ -16,16 +16,37 @@
     <form action="#" class="myform">
          <h3 class="myform__heading l-align-center">Form</h3>
 
-            <label for="firstName">Name</label><br>
-            <input type="text" class="m-text" name="firstName" placeholder="Placeholder Text"><br>
-    
-            <label for="firstName">Name</label><br>
-            <input type="text" class="m-text m-text--success" name="firstName" placeholder="Placeholder Text" >
-            <i class="fa fa-check m-text__icon m-text__icon--success" aria-hidden="true"></i><br>
-    
-            <label for="firstName">Name</label><br>
-            <input type="text" class="m-text m-text--error" name="firstName" placeholder="Placeholder Text" >
-            <i class="fa fa-times m-text__icon m-text__icon--error" aria-hidden="true"></i><br>
+            <div class="m-text">
+                <label for="firstName">Default</label><br>
+                <input type="text" class="m-text__input" name="firstName" placeholder="Placeholder Text"><br>
+            </div>
+            <div class="m-text--disabled">
+                <label for="firstName">Default-disabled</label><br>
+                <input type="text" class="m-text__input" disabled="disabled" name="firstName" placeholder="Placeholder Text"><br>
+            </div>
+
+
+            <div class="m-text--success">
+                <label for="firstName1">Valid</label><br>
+                <input type="text" class="m-text__input" name="firstName1" placeholder="Placeholder Text"><br>
+            </div>
+            <div class="m-text--success">
+                <label for="firstName1">Valid disabled</label><br>
+                <input type="text" class="m-text__input" disabled="disabled" name="firstName1" placeholder="Placeholder Text"><br>
+            </div>
+
+
+            <div class="m-text--error">
+                <label for="firstName2">In-Valid</label><br>
+                <input type="text" class="m-text__input" name="firstName2" placeholder="Placeholder Text"><br>
+            </div>
+            <div class="m-text--error">
+                <label for="firstName2">In-Valid</label><br>
+                <input type="text" class="m-text__input" disabled="disabled" name="firstName2" placeholder="Placeholder Text"><br>
+            </div>
+            
+            
+            
         
          <br>
         
@@ -41,36 +62,80 @@
             </label>
         </div>
         <br>
-            <label class="m-radio is-shown">
-                <input type="radio" class="m-radio__input">
-                <span class="m-radio__clickBtn"></span>Checked
+   
+            <h3>Gender:</h3>
+
+            <label class="m-radio">
+                <input type="radio" class="m-radio__input" name="gender" value="male">
+                <span class="m-radio__clickbtn"></span>Male
+            </label> 
+
+            <label class="m-radio">
+                <input type="radio" class="m-radio__input" name="gender" value="female">
+                <span class="m-radio__clickbtn"></span>Female
             </label> <br>  <br>
+
+            <label class="m-radio m-radio">
+                <input type="radio" class="m-radio__input" name="gender" value="female" disabled>
+                <span class="m-radio__clickbtn"></span>Female
+            </label> <br> 
     
-            <label class="m-radio m-radio--disabled is-hidden" > 
-                <input type="radio" class="m-radio__input" >
-                <span class="m-radio__clickBtn"></span>Disabled
-            </label> <br>
+            <h3>Answer</h3>
+
+            <label class="m-radio">
+                <input type="radio" class="m-radio__input" name="ans" value="yes">
+                <span class="m-radio__clickbtn"></span>Yes
+            </label> 
+
+            <label class="m-radio">
+                <input type="radio" class="m-radio__input" name="ans" value="yes">
+                <span class="m-radio__clickbtn"></span>No
+            </label> <br>  <br>
+            
+
+            <!--*<label class="m-radio m-radio--disabled is-hidden" > 
+                <input type="radio" class="m-radio__input" name="gender" value="female" >
+                <span class="m-radio__clickbtn"></span>Female
+                </label> <br>
+            -->
           <br>
             <button class="m-btn m-btn--default">Default</button>
 
-            <button class="m-btn m-btn--primary is-selected">Primary</button>
+            <button class="m-btn m-btn--primary">Primary</button>
 
-            <button class="m-btn m-btn--secondary">Secondary</button>
+            <button class="m-btn m-btn--secondary">Secondary</button> <br>
+
+            <button class="m-btn m-btn--default" disabled>Default</button>
+
+            <button class="m-btn m-btn--primary" disabled>Primary</button>
+
+            <button class="m-btn m-btn--secondary" disabled>Secondary</button> <br>
+
+
+
          <br>    
     </form>
-    <div class="messages">
+    <div class="m-messages">
 
-        <p class="m-messages__item m-messages__item--default l-align-center l-msg-padding"><i class="fa fa-info-circle l-icon-rmargin" aria-hidden="true"></i>
-            This is a simple information  <i class="fa fa-times l-icon-lmargin" aria-hidden="true"></i></p>
+        <p class="m-messages__item m-messages__item--default">
+                This is a message
+                <span class="m-messages__close"></span>
+        </p>
        
-       <p class="m-messages__item m-messages__item--success l-align-center l-msg-padding"><i class="fa fa-check-circle l-icon-rmargin" aria-hidden="true"></i>
-            Your action was completed successfully <i class="fa fa-times l-icon-lmargin" aria-hidden="true"></i></p>
+       <p class="m-messages__item m-messages__item--success ">
+            Your action was completed successfully
+            <span class="m-messages__close"></span>
+       </p>
        
-       <p class="m-messages__item m-messages__item--error l-align-center l-msg-padding"><i class="fa fa-times-circle l-icon-rmargin" aria-hidden="true"></i>
-            Your action couldn’t be completed<i class="fa fa-times l-icon-lmargin" aria-hidden="true"></i></p>
+       <p class="m-messages__item m-messages__item--error ">
+            Your action couldn’t be completed
+            <span class="m-messages__close"></span>
+        </p>
  
-        <p class="m-messages__item m-messages__item--warning l-align-center l-msg-padding"><i class="fa fa-exclamation-triangle l-icon-rmargin" aria-hidden="true"></i>
-            Your action might have side effects<i class="fa fa-times l-icon-lmargin" aria-hidden="true"></i></p>
+        <p class="m-messages__item m-messages__item--warning ">
+            Your action might have side effects
+            <span class="m-messages__close"></span>
+        </p>
     </div>
     <footer id="footer" class="l-align-center l-full-width">
         <h2>FOOTER TEXT GOES HERE</h2>

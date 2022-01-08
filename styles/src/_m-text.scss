@@ -13,34 +13,59 @@
             <i class="fa fa-times m-text__icon m-text__icon--error" aria-hidden="true"></i></input><br>
   */
   @import "config";
+  
 .m-text{
-        color:#181E23;
+    $classname:m-text;
+   
+    &__input{
         line-height: 24px;
         border: 2px solid #D1D8E0;
         border-radius: 4px;
+        width: 90%;
         margin-bottom: 10px;
+        padding: 0.5625rem 0.625rem;
+        color:#181E23;
+        line-height: 150%;
+        border-radius: 0.25rem;
 
-        &--success{
-            border:1px solid #30AB6C;
+        &:focus{
+            border: 0.0625rem solid var(--textbox-focus-border); 
+           box-shadow: 0 0 0 0.125rem var(--valid-textbox-focus-box-shadow);
+             outline: none;
+        }
+        &:after{
+            content: url('/icons/valid-tickmark.svg');
+            display: inline;
+            
+          }
+    }
+    &:disabled {
+        background-color: gray;
+    }
+    &--success{
+        .#{$classname}__input{
             background-color: #F6FEFA;
         }
-
-        &--error{
+        .#{$classname}__input::after{
+                content: url('/icons/valid-tickmark.svg');
+              }
+    }
+    &--error{
+        .#{$classname}__input{
             border:1px solid #F27649;
             background-color: #FEF1EC;
-        }
-        &__icon{
-
-            &--success{
-                @include icon(relative,25px);
-                color: #30AB6C;
-            }
-
-            &--error{
-                @include icon(relative,25px);
-                color: #F27649;
+            &:focus{
+                border: 0.0625rem solid #eb551e; 
+                box-shadow: 0 0 0 0.125rem var(--invalid-textbox-focus-box-shadow);
+                outline: none;
             }
         }
-    }
+        .#{$classname}__input::before {
+                content: 'success-icon';
+                display: block;
+                background-image: url("/icons/valid-tickmark.svg");
 
-
+              }
+        }
+    
+}
